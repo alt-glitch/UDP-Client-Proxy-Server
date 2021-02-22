@@ -11,7 +11,7 @@ class UDP_Client:
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         try:
             while True:
-                sleep(2)
+                sleep(1)
                 client_socket.sendto(b"What is the time?", (self.target_host, self.target_port))
                 data, addr = client_socket.recvfrom(1024)
                 print("The time is:", data.decode())
